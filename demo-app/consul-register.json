@@ -1,0 +1,23 @@
+{
+    "ID": "python-test",
+    "Name": "python-test",
+    "Service": "python-test",
+    "ServiceID": "python-test-${HOSTNAME}",
+    "Address": "$HOSTNAME",
+    "Tags": [
+      "urlprefix-/"
+    ],
+    "Meta": {
+        "app_version": "1.0"
+    },
+    "Port": 8000,
+  "Check": {
+    "CheckID": "service:ptyhon-test:${HOSTNAME}",
+    "Name": "Python test health check",
+    "ServiceID": "python-test-${HOSTNAME}",
+      "http": "http://$HOSTNAME:8000/cgi-bin/index.py",
+      "Interval": "5s",
+      "Timeout": "1s",
+      "DeregisterCriticalServiceAfter": "30s"
+  }
+}
