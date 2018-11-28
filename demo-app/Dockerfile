@@ -1,5 +1,5 @@
 FROM python
 WORKDIR /usr/src/app
 COPY . ./
-CMD ./start.sh $VERSION
+ENTRYPOINT ./start.sh
 EXPOSE 8000

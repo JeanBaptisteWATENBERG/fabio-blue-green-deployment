@@ -1,7 +1,7 @@
 {
-    "ID": "python-test",
+    "ID": "python-test-${HOSTNAME}",
     "Name": "python-test",
-    "Service": "python-test",
+    "Service": "python-test-${HOSTNAME}",
     "ServiceID": "python-test-${HOSTNAME}",
     "Address": "$HOSTNAME",
     "Tags": [
