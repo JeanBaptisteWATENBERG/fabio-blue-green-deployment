@@ -6,6 +6,7 @@ This environment was then reused to test logstash integration behind fabio with 
 
 <details>
   <summary>Blue Green deployment</summary>
+
 ## Blue Green deployment
 
 As stated in the introduction, we were facing 502 status codes when redeploying a docker stack behind fabio. We rapidly identified that it came from the fact that consul healthcheck weren't updated when the deployment occcurred. 
@@ -67,6 +68,7 @@ Steps :
 </details>
 <details>
 <summary>Logstash behind fabio</summary>
+
 ## Logstash behind fabio
 
 ### Components
@@ -111,6 +113,7 @@ PUT .kibana/_settings
 	- You then can check if filebeat can communicate with logstash (through fabio) by running : tail -f logs/filebeat
         - if everything goes well you should retrieve filebeat logs in elasticsearch and watch them coming from kibana as well.
 </details>
+
 ## Usefull urls : 
  - Consul UI : http://localhost:8500/ui
  - Fabio UI : http://localhost:9998/routes
