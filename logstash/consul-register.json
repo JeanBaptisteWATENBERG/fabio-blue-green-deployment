@@ -1,0 +1,23 @@
+{
+    "ID": "logstash-${HOSTNAME}",
+    "Name": "logstash",
+    "Service": "logstash-${HOSTNAME}",
+    "ServiceID": "logstash-${HOSTNAME}",
+    "Address": "$HOSTNAME",
+    "Tags": [
+      "urlprefix-:52999 proto=tcp"
+    ],
+    "Meta": {
+        "app_version": "1.0"
+    },
+    "Port": 5044,
+  "Check": {
+    "CheckID": "service:logstash:${HOSTNAME}",
+    "Name": "Logstash test health check",
+    "ServiceID": "logstash-${HOSTNAME}",
+      "http": "http://$HOSTNAME:9600",
+      "Interval": "5s",
+      "Timeout": "1s",
+      "DeregisterCriticalServiceAfter": "30s"
+  }
+}
