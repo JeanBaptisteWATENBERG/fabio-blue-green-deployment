@@ -1,0 +1,23 @@
+{
+  "ID": "java-test-${HOSTNAME}",
+  "Name": "java-test",
+  "Service": "java-test-${HOSTNAME}",
+  "ServiceID": "java-test-${HOSTNAME}",
+  "Address": "$HOSTNAME",
+  "Tags": [
+    "urlprefix-/"
+  ],
+  "Meta": {
+      "app_version": "1.0"
+  },
+  "Port": 8080,
+  "Check": {
+    "CheckID": "service:java-test:${HOSTNAME}",
+    "Name": "java test health check",
+    "ServiceID": "java-test-${HOSTNAME}",
+      "http": "http://$HOSTNAME:8080/rest/rest/docs",
+      "Interval": "5s",
+      "Timeout": "1s",
+      "DeregisterCriticalServiceAfter": "30s"
+  }
+}
